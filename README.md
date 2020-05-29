@@ -1,6 +1,13 @@
 # fx2preset-lite
-內部使用工具
+## 簡介
+內部使用工具，使用前要先安裝[go](https://golang.org/) 1.14以後的版本
 
+## 安裝
+```
+go get -v -u github.com/Jockey66666/fx2preset-lite
+```
+
+# 功能介紹
 ## 還原文件
 ```
 fx2preset-lite restore

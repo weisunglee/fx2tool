@@ -1,7 +1,7 @@
 GO ?= go
 GOBUILD ?= $(GO) build
 BINARY_NAME ?= fx2preset
-GOFILES := $(shell find . -name "*.go")
+GOFILES := $(shell find . -name "*.go" -maxdepth 1)
 GOPATH_BIN = ~/go/bin/
 
 all: build

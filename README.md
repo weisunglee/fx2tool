@@ -1,17 +1,33 @@
 # fx2preset-lite
 內部使用工具
 
-1. 還原文件
+## 還原文件
 ```
-fx2preset restore
-```
-
-2. 列出所有preset
-```
-fx2preset list
+fx2preset-lite restore
 ```
 
-3. 打開preset目錄
+## 列出所有preset
 ```
-fx2preset find "American Dream"
+fx2preset-lite list
+```
+
+## 打開preset目錄
+```
+fx2preset-lite find "American Dream"
+```
+
+## 登出tonecloud
+```
+fx2preset-lite logout
+```
+
+## 切換tonecloud環境
+### prodction
+```
+fx2preset-lite env prod
+```
+
+### staging
+```
+fx2preset-lite env stage
 ```

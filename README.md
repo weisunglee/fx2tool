@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/Jockey66666/fx2preset-lite.svg?branch=master)](https://travis-ci.org/Jockey66666/fx2preset-lite)
+![Go](https://github.com/Jockey66666/fx2preset-lite/workflows/Go/badge.svg)
 
 # fx2preset-lite
 ## 簡介

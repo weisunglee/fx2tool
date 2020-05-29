@@ -2,7 +2,7 @@
 
 # fx2preset-lite
 ## 簡介
-內部使用工具，使用前要先安裝[go](https://golang.org/) 1.14以後的版本
+內部使用工具，使用前要先安裝 [go](https://golang.org/) 1.14以後的版本
 
 ## 安裝
 ```

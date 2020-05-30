@@ -6,7 +6,7 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/Jockey66666/fx2-tool/pkg/filesystem"
+	"github.com/Jockey66666/fx2tool/pkg/filesystem"
 )
 
 // RestorePreset : factory reset

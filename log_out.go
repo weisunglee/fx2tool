@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/Jockey66666/fx2-tool/pkg/filesystem"
+	"github.com/Jockey66666/fx2tool/pkg/filesystem"
 )
 
 // Logout : log out from tonecloud

@@ -1,4 +1,4 @@
-module github.com/Jockey66666/fx2-tool
+module github.com/Jockey66666/fx2tool
 
 go 1.14
 

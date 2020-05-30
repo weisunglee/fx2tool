@@ -3,7 +3,6 @@ package main
 import (
 	"encoding/json"
 	"log"
-	"os/exec"
 
 	"github.com/Jockey66666/fx2preset-lite/pkg/filesystem"
 	"github.com/Jockey66666/fx2preset-lite/pkg/pgjson"
@@ -35,9 +34,7 @@ func FindPreset(rootPath, name string) {
 		for _, preset := range presets.LivePresets {
 			if preset.PresetName == name {
 				presetPath = rootPath + "/" + bank.BankFolder + "/" + preset.PresetUUID
-
-				cmd := exec.Command("open", presetPath)
-				cmd.Run()
+				filesystem.RevealFile(presetPath)
 			}
 		}
 	}

@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"os"
 
-	"github.com/Jockey66666/fx2preset-lite/pkg/filesystem"
+	"github.com/Jockey66666/fx2-tool/pkg/filesystem"
 )
 
 const (

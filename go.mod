@@ -1,4 +1,4 @@
-module github.com/Jockey66666/fx2preset-lite
+module github.com/Jockey66666/fx2-tool
 
 go 1.14
 

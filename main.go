@@ -11,7 +11,7 @@ import (
 func main() {
 
 	app := cli.NewApp()
-	app.Name = "fx2preset-lite"
+	app.Name = "fx2-tool"
 	app.Usage = "command line utility for BIAS FX2 preset data"
 	app.Version = "1.0.5"
 

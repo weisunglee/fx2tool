@@ -1,5 +1,6 @@
 [![Travis CI](https://travis-ci.org/Jockey66666/fx2preset-lite.svg?branch=master)](https://travis-ci.org/Jockey66666/fx2preset-lite)
-![Github Actions](https://github.com/Jockey66666/fx2preset-lite/workflows/Go/badge.svg)
+![Go-macOS](https://github.com/Jockey66666/fx2preset-lite/workflows/Go-macOS/badge.svg)
+![Go-win](https://github.com/Jockey66666/fx2preset-lite/workflows/Go-win/badge.svg)
 [![Go Report Card](https://goreportcard.com/badge/github.com/jockey66666/fx2preset-lite)](https://goreportcard.com/report/github.com/jockey66666/fx2preset-lite)
 
 

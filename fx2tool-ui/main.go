@@ -2,7 +2,6 @@ package main
 
 import (
 	"log"
-	"time"
 
 	"gioui.org/app"
 	"gioui.org/font/gofont"
@@ -30,10 +29,9 @@ var (
 	list          = &layout.List{
 		Axis: layout.Vertical,
 	}
-	progress            = 0
-	progressIncrementer chan int
-	topLabel            = "FX2 Tool"
-	rootPath            = "~/Documents/PositiveGrid/BIAS_FX2/GlobalPresets"
+
+	topLabel = "FX2 Tool"
+	rootPath = "~/Documents/PositiveGrid/BIAS_FX2/GlobalPresets"
 )
 
 type (
@@ -45,16 +43,7 @@ type (
 )
 
 func main() {
-
-	progressIncrementer = make(chan int)
 	gofont.Register()
-
-	go func() {
-		for {
-			time.Sleep(30 * time.Millisecond)
-			progressIncrementer <- 1
-		}
-	}()
 
 	go func() {
 		w := app.NewWindow(app.Size(unit.Dp(640), unit.Dp(400)), app.Title(topLabel))
@@ -67,7 +56,7 @@ func main() {
 
 func loop(w *app.Window) error {
 	th := material.NewTheme()
-
+	w.Invalidate()
 	var ops op.Ops
 	for {
 		select {
@@ -82,12 +71,6 @@ func loop(w *app.Window) error {
 				showWidget(gtx, th)
 				e.Frame(gtx.Ops)
 			}
-		case p := <-progressIncrementer:
-			progress += p
-			if progress > 100 {
-				progress = 0
-			}
-			w.Invalidate()
 		}
 	}
 }
@@ -172,9 +155,6 @@ func showWidget(gtx layout.Context, th *material.Theme) layout.Dimensions {
 					})
 				}),
 			)
-		},
-		func(gtx C) D {
-			return material.ProgressBar(th, progress).Layout(gtx)
 		},
 	}
 

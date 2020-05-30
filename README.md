@@ -9,8 +9,16 @@
 內部使用工具，使用前要先安裝 [go](https://golang.org/) 1.14以後的版本
 
 ## 安裝
+### command-line版本
+
 ```
 go get -v -u github.com/Jockey66666/fx2tool
+```
+
+### gui版本
+
+```
+go get -v -u github.com/Jockey66666/fx2tool/fx2tool-ui
 ```
 
 # 功能介紹

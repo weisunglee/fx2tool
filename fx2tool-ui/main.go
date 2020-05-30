@@ -102,12 +102,13 @@ func showWidget(gtx layout.Context, th *material.Theme) layout.Dimensions {
 	widgets := []layout.Widget{
 		material.H3(th, topLabel).Layout,
 		func(gtx C) D {
-			e := material.Editor(th, lineEditor, "Preset name")
-			return e.Layout(gtx)
-		},
-		func(gtx C) D {
 			in := layout.UniformInset(unit.Dp(5))
 			return layout.Flex{Alignment: layout.Middle}.Layout(gtx,
+				layout.Rigid(func(gtx C) D {
+					return in.Layout(gtx, func(gtx C) D {
+						return material.Editor(th, lineEditor, "Preset name").Layout(gtx)
+					})
+				}),
 				layout.Rigid(func(gtx C) D {
 					return in.Layout(gtx, func(gtx C) D {
 						for findPresetBtn.Clicked() {
@@ -116,6 +117,11 @@ func showWidget(gtx layout.Context, th *material.Theme) layout.Dimensions {
 						return material.Button(th, findPresetBtn, "Find preset").Layout(gtx)
 					})
 				}),
+			)
+		},
+		func(gtx C) D {
+			in := layout.UniformInset(unit.Dp(5))
+			return layout.Flex{Alignment: layout.Middle}.Layout(gtx,
 				layout.Rigid(func(gtx C) D {
 					return in.Layout(gtx, func(gtx C) D {
 						for listPresetBtn.Clicked() {

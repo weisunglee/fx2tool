@@ -13,7 +13,7 @@ go get -v -u github.com/Jockey66666/fx2preset-lite
 ```
 
 # 功能介紹
-## 還原文件
+## 還原文件 (Windows版只支援刪除)
 ```
 fx2preset-lite restore
 ```

@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"runtime"
 
 	"github.com/Jockey66666/fx2preset-lite/pkg/filesystem"
 )
@@ -11,10 +12,16 @@ import (
 // RestorePreset : factory reset
 func RestorePreset() {
 	userHome := filesystem.ExpandHome("~")
-	copyPresetFromBundle(userHome)
+
+	if runtime.GOOS == "windows" {
+		removeAllPresets(userHome)
+	} else {
+		copyPresetFromBundle(userHome)
+	}
+
 	removeAmpList(userHome)
 	removeFxList(userHome)
-	removeSetting(userHome)
+	removeSetting()
 }
 
 func copyPresetFromBundle(userHome string) {
@@ -32,8 +39,8 @@ func copyPresetFromBundle(userHome string) {
 	}
 }
 
-func removeSetting(userHome string) {
-	userSetting := userHome + "/Library/Application Support/PositiveGrid/BIAS_FX2.settings"
+func removeSetting() {
+	userSetting := filesystem.GetSettingsPath() + "/PositiveGrid/BIAS_FX2.settings"
 
 	err := os.Remove(userSetting)
 	if err == nil {
@@ -57,4 +64,9 @@ func removeFxList(userHome string) {
 	if err == nil {
 		fmt.Println(fxlist, "is removed.")
 	}
+}
+
+func removeAllPresets(userHome string) {
+	dst := userHome + "/Documents/PositiveGrid/BIAS_FX2/GlobalPresets/"
+	os.RemoveAll(dst)
 }

@@ -13,7 +13,7 @@ func main() {
 	app := cli.NewApp()
 	app.Name = "fx2preset-lite"
 	app.Usage = "command line utility for BIAS FX2 preset data"
-	app.Version = "1.0.4"
+	app.Version = "1.0.5"
 
 	const rootPath = "~/Documents/PositiveGrid/BIAS_FX2/GlobalPresets"
 

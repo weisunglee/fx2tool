@@ -23,6 +23,7 @@ var (
 	}
 	findPresetBtn = new(widget.Clickable)
 	listPresetBtn = new(widget.Clickable)
+	restoreBtn    = new(widget.Clickable)
 	logOutBtn     = new(widget.Clickable)
 	switchEnvBtn  = new(widget.Clickable)
 	isStage       = true
@@ -105,7 +106,7 @@ func showWidget(gtx layout.Context, th *material.Theme) layout.Dimensions {
 			return e.Layout(gtx)
 		},
 		func(gtx C) D {
-			in := layout.UniformInset(unit.Dp(8))
+			in := layout.UniformInset(unit.Dp(5))
 			return layout.Flex{Alignment: layout.Middle}.Layout(gtx,
 				layout.Rigid(func(gtx C) D {
 					return in.Layout(gtx, func(gtx C) D {
@@ -143,12 +144,25 @@ func showWidget(gtx layout.Context, th *material.Theme) layout.Dimensions {
 						return material.Button(th, switchEnvBtn, displayText).Layout(gtx)
 					})
 				}),
+			)
+		},
+		func(gtx C) D {
+			in := layout.UniformInset(unit.Dp(5))
+			return layout.Flex{Alignment: layout.Middle}.Layout(gtx,
 				layout.Rigid(func(gtx C) D {
 					return in.Layout(gtx, func(gtx C) D {
 						for logOutBtn.Clicked() {
 							cmd.Logout()
 						}
 						return material.Button(th, logOutBtn, "Log out").Layout(gtx)
+					})
+				}),
+				layout.Rigid(func(gtx C) D {
+					return in.Layout(gtx, func(gtx C) D {
+						for restoreBtn.Clicked() {
+							cmd.RestorePreset()
+						}
+						return material.Button(th, restoreBtn, "Factory default").Layout(gtx)
 					})
 				}),
 			)

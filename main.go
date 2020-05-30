@@ -5,6 +5,7 @@ import (
 	"os"
 	"sort"
 
+	"github.com/Jockey66666/fx2tool/cmd"
 	"github.com/urfave/cli/v2"
 )
 
@@ -23,7 +24,7 @@ func main() {
 			Aliases: []string{"r"},
 			Usage:   "Restore preset from bundle and remove BIAS_FX2.settings",
 			Action: func(c *cli.Context) error {
-				RestorePreset()
+				cmd.RestorePreset()
 				return nil
 			},
 		},
@@ -32,7 +33,7 @@ func main() {
 			Aliases: []string{"l"},
 			Usage:   "Show all presets",
 			Action: func(c *cli.Context) error {
-				ListAllPresets(rootPath)
+				cmd.ListAllPresets(rootPath)
 				return nil
 			},
 		},
@@ -41,7 +42,7 @@ func main() {
 			Aliases: []string{"f"},
 			Usage:   "Find preset name",
 			Action: func(c *cli.Context) error {
-				FindPreset(rootPath, c.Args().First())
+				cmd.FindPreset(rootPath, c.Args().First())
 				return nil
 			},
 		},
@@ -50,7 +51,7 @@ func main() {
 			Aliases: []string{"lo"},
 			Usage:   "Log out from tonecloud",
 			Action: func(c *cli.Context) error {
-				Logout()
+				cmd.Logout()
 				return nil
 			},
 		},
@@ -64,7 +65,7 @@ func main() {
 					Aliases: []string{"p"},
 					Usage:   "prodction environment",
 					Action: func(c *cli.Context) error {
-						SwitchToProdction()
+						cmd.SwitchToProdction()
 						return nil
 					},
 				},
@@ -73,7 +74,7 @@ func main() {
 					Aliases: []string{"s"},
 					Usage:   "staging environment",
 					Action: func(c *cli.Context) error {
-						SwitchToStaging()
+						cmd.SwitchToStaging()
 						return nil
 					},
 				},
